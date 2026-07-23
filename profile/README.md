@@ -17,9 +17,9 @@ Instead of relying on subjective judgment, users simply take a photo of an avoca
 To improve the overall user experience, the application stores scan history, supports personalized ripeness preferences, and provides notifications before the avocado reaches its optimal eating stage.
 
 <p align="center">
-  <img src="docs/images/service1.png" width="220"/>
-  <img src="docs/images/service2.png" width="220"/>
-  <img src="docs/images/service3.png" width="220"/>
+  <img src="../docs/images/service1.png" width="220"/>
+  <img src="../docs/images/service2.png" width="220"/>
+  <img src="../docs/images/service3.png" width="220"/>
 </p>
 
 ---
@@ -180,7 +180,7 @@ d-avocado/
 ## Team Photo
 
 <p align="center">
-<img src="docs/images/team_photo.png" width="800">
+<img src="../docs/images/team_photo.png" width="800">
 </p>
 
 ## Members
@@ -189,28 +189,27 @@ d-avocado/
 <tr>
 
 <td align="center">
-<img src="docs/images/team/member1.jpg" width="140"><br>
+<img src="../docs/images/team/member1.jpg" width="140"><br>
 <b>Member 1</b><br>
-Project Manager<br>
-Backend
 </td>
 
 <td align="center">
-<img src="docs/images/team/member2.jpg" width="140"><br>
+<img src="../docs/images/team/member2.jpg" width="140"><br>
 <b>Member 2</b><br>
-AI Engineer
 </td>
 
 <td align="center">
-<img src="docs/images/team/member3.jpg" width="140"><br>
+<img src="../docs/images/team/member3.jpg" width="140"><br>
 <b>Member 3</b><br>
-iOS Developer
 </td>
 
 <td align="center">
-<img src="docs/images/team/member4.jpg" width="140"><br>
+<img src="../docs/images/team/member4.jpg" width="140"><br>
 <b>Member 4</b><br>
-MLOps Engineer
+
+<td align="center">
+<img src="../docs/images/team/member4.jpg" width="140"><br>
+<b>Member 5</b><br>
 </td>
 
 </tr>

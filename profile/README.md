@@ -1,43 +1,67 @@
-# D-avocado
+# 🥑 D-avocado
 
-Snap a photo of an avocado, find out its ripening stage, and know exactly how many days
-are left until it's ready to eat.
+> **AI-powered avocado ripeness tracking platform**
 
-D-avocado classifies avocado ripeness (stages 1–5) from a single photo using a
-ResNet-18 model, then predicts the number of days remaining until your target eating
-stage (D-day) — adjusted for storage temperature.
+Snap a photo of an avocado, find out its ripening stage, and know exactly how many days are left until it's ready to eat.
 
----
-
-## Features
-
-- **Ripeness classification** — upload a photo, get a 5-class prediction with
-per-class confidence
-- **D-day prediction** — days remaining until your target stage, based on the
-predicted stage and (optionally) storage temperature
-- **Target stage setting** — set your preferred eating stage once; it applies to
-every scan automatically
-- **Notifications** — get notified before your avocado passes its target stage
-- **History** — browse past scans and their outcomes
-
-See [`docs/PRD.md`](./docs/PRD.md) for the full product spec, target user, and scope.
+D-avocado classifies avocado ripeness (Stages 1–5) from a single photo using a deep learning model (ResNet-18), then predicts the remaining days until your preferred eating stage (D-day), adjusted for storage temperature.
 
 ---
 
-## Tech Stack
+# 📱 Service Introduction
+
+D-avocado is an AI-powered mobile application that helps users determine the optimal time to eat an avocado.
+
+Instead of relying on subjective judgment, users simply take a photo of an avocado. The system automatically classifies its ripeness into one of five stages and predicts how many days remain until it reaches the user's preferred ripeness.
+
+To improve the overall user experience, the application stores scan history, supports personalized ripeness preferences, and provides notifications before the avocado reaches its optimal eating stage.
+
+<p align="center">
+<img src="docs/images/service.png" width="900">
+</p>
+
+---
+
+# ✨ Features
+
+- 📷 **Ripeness Classification**
+  - Upload a photo and receive a five-stage ripeness prediction with confidence scores.
+
+- 📅 **D-day Prediction**
+  - Estimate the remaining days until the avocado reaches your preferred ripeness stage.
+
+- 🌡 **Temperature-aware Prediction**
+  - D-day is adjusted using storage temperature.
+
+- 👤 **Personalized Preferences**
+  - Save your preferred eating stage once and apply it automatically to every scan.
+
+- 🔔 **Notifications**
+  - Receive reminders before the avocado reaches its target ripeness.
+
+- 📚 **History**
+  - Browse previous scans and prediction results.
+
+---
+
+# 🛠 Tech Stack
 
 | Layer | Stack |
 | --- | --- |
 | Mobile (iOS) | Swift / Xcode |
-| Backend API | Spring Boot 3.4.2, Java 21, Gradle 8.14.3 (Groovy DSL) |
+| Backend API | Spring Boot 3.4.2, Java 21 |
 | ML Inference | FastAPI, PyTorch (ResNet-18) |
 | Database | PostgreSQL (Cloud SQL) |
 | Image Storage | Google Cloud Storage |
-| Infra | Cloud Run, Artifact Registry, Vertex AI Custom Job |
+| Infrastructure | Cloud Run, Artifact Registry, Vertex AI Custom Job |
 
 ---
 
-## Architecture
+# 🏗 Architecture
+
+<p align="center">
+<img src="docs/images/architecture.png" width="900">
+</p>
 
 ```
                  ┌───────────────┐
@@ -47,85 +71,172 @@ See [`docs/PRD.md`](./docs/PRD.md) for the full product spec, target user, and s
                  ┌───────▼────────────┐
                  │ Spring Boot API    │
                  │ (Cloud Run)        │
-                 │  - auth (JWT)      │
-                 │  - scans CRUD      │
-                 │  - notifications   │
+                 │  - Authentication  │
+                 │  - Scan Management │
+                 │  - Notifications   │
                  └───┬───────────┬────┘
                      │           │
         ┌────────────▼──┐   ┌────▼─────────────┐
-        │ Cloud SQL      │   │ GCS              │
-        │ (PostgreSQL)   │   │ d-avocado-images │
-        └────────────────┘   └───────────────────┘
+        │ Cloud SQL      │   │ Cloud Storage    │
+        │ PostgreSQL     │   │ Images           │
+        └────────────────┘   └──────────────────┘
                      │
-                 ┌───▼─────────────────┐
-                 │ FastAPI ML service  │
-                 │ (Cloud Run)         │
-                 │  - ResNet-18 infer  │
-                 |  - AutoML           |           
-                 │  - D-day calc (β)   │
-                 └──────────────────────┘
+              ┌──────▼────────────────┐
+              │ FastAPI AI Service    │
+              │ (Cloud Run)           │
+              │ - Image Preprocessing │
+              │ - ResNet-18           │
+              │ - AutoML              │
+              │ - D-day Prediction    │
+              └───────────────────────┘
 ```
 
-The Spring Boot API owns auth, scan records, and notification scheduling. The FastAPI
-service owns all ripeness inference and D-day/β-coefficient calculation — Spring only
-stores the values it returns and contains no ripening-model logic itself.
+The backend manages authentication, user information, scan history, and cloud storage.
+
+The AI inference service is fully independent and performs image preprocessing, ripeness prediction, and D-day estimation.
 
 ---
 
-## Repo Structure
+# 🚀 End-to-End Workflow
 
 ```
-davocado/
-├── server/     # Spring Boot API
-├── ml/         # ResNet-18 training + FastAPI inference service
-└── docs/       # PRD, DB spec, API spec
+Take Photo
+      │
+      ▼
+Upload Image
+      │
+      ▼
+Spring Boot API
+      │
+      ▼
+Image Preprocessing
+      │
+      ▼
+AI Inference
+      │
+      ▼
+Ripeness Prediction
+      │
+      ▼
+D-day Calculation
+      │
+      ▼
+Save History
+      │
+      ▼
+Return Result
 ```
 
 ---
 
-## Getting Started
+# 📂 Repository Structure
 
-### Backend (`/server`)
-
-```bash
-cd server
-./gradlew bootRun
+```
+d-avocado/
+│
+├── docs/
+│   ├── PRD.md
+│   ├── API_spec.md
+│   ├── DB_spec.md
+│   ├── Architecture.md
+│   └── images/
+│
+├── davocado-frontend/
+├── davocado-backend/
+└── d-avocado-ripeness-mlops/
 ```
 
-Requires a running PostgreSQL instance and the environment variables described in
-`server/src/main/resources/application-*.yml` (profile-separated config).
+---
 
-### ML service (`/ml`)
+# 📚 Documentation
 
-```bash
-cd ml
-pip install -r requirements.txt
-uvicorn app.main:app --reload
-```
-
-Model weights are loaded per `model_version`; see `ml/README.md` for training and
-inference details.
+| Document | Description |
+|----------|-------------|
+| PRD.md | Product requirements |
+| API_spec.md | Backend API documentation |
+| DB_spec.md | Database schema |
+| Architecture.md | Overall system architecture |
 
 ---
 
-## Documentation
+# 📖 Dataset & References
 
-- [`docs/PRD.md`](./docs/PRD.md) — product requirements, target user, scope
-- [`docs/DB_spec.md`](./docs/DB_spec.md) — database schema
-- [`docs/API_spec.md`](./docs/API_spec.md) — API endpoints
+### Dataset
 
----
+- Hass Avocado Ripening Photographic Dataset (~14,700 images)
 
-## Dataset & References
+### References
 
-- Hass Avocado Ripening Photographic Dataset (~14,700 images, CC BY 4.0), Mendeley Data
-- Xavier et al. (2024), *Foods* — dataset paper and α ripening coefficients
-- Perez et al. (2004) — Q10 value
-- Arpaia et al. (2018) — temperature–ripening-speed plateau finding
+- Xavier et al. (2024), *Foods*
+- Perez et al. (2004)
+- Arpaia et al. (2018)
 
 ---
 
-## Team
+# 👥 Team
 
-ML modeling & backend, and AutoML comparison model developed by separate team members
-as part of a capstone project. Roles and full team list — *TBD*.
+## Team Photo
+
+<p align="center">
+<img src="docs/images/team/team_photo.jpg" width="800">
+</p>
+
+## Members
+
+<table>
+<tr>
+
+<td align="center">
+<img src="docs/images/team/member1.jpg" width="140"><br>
+<b>Member 1</b><br>
+Project Manager<br>
+Backend
+</td>
+
+<td align="center">
+<img src="docs/images/team/member2.jpg" width="140"><br>
+<b>Member 2</b><br>
+AI Engineer
+</td>
+
+<td align="center">
+<img src="docs/images/team/member3.jpg" width="140"><br>
+<b>Member 3</b><br>
+iOS Developer
+</td>
+
+<td align="center">
+<img src="docs/images/team/member4.jpg" width="140"><br>
+<b>Member 4</b><br>
+MLOps Engineer
+</td>
+
+</tr>
+</table>
+
+## Responsibilities
+
+| Member | Major |
+|---------|------------------|
+| Taeyeon Hwang | Kyonggi University Computer Science |
+| Yujin Nam | Keimyung University Computer Science |
+| HyeongJun Kim | Chosun University Information and Communication Engineering |
+| Seungchae Lee | Kumoh National Institute Of Tech |
+| Seon Ung | Keimyung University Automotive Engineering |
+
+---
+
+# 📌 Future Work
+
+- Push notification scheduling
+- Continuous model retraining
+- Explainable AI
+- Model monitoring
+- CI/CD automation
+- Performance optimization
+
+---
+
+# 📄 License
+
+This project was developed as a university capstone project for educational and research purposes.

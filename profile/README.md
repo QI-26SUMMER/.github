@@ -62,7 +62,7 @@ To improve the overall user experience, the application stores scan history, sup
 # 🏗 Architecture
 
 <p align="center">
-<img src="docs/images/architecture.png" width="900">
+<img src="../docs/images/architecture.png" width="900">
 </p>
 
 ```

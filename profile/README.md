@@ -61,6 +61,7 @@ See [`docs/PRD.md`](./docs/PRD.md) for the full product spec, target user, and s
                  │ FastAPI ML service  │
                  │ (Cloud Run)         │
                  │  - ResNet-18 infer  │
+                 |  - AutoML           |           
                  │  - D-day calc (β)   │
                  └──────────────────────┘
 ```

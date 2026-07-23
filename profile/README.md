@@ -17,7 +17,9 @@ Instead of relying on subjective judgment, users simply take a photo of an avoca
 To improve the overall user experience, the application stores scan history, supports personalized ripeness preferences, and provides notifications before the avocado reaches its optimal eating stage.
 
 <p align="center">
-<img src="docs/images/service.png" width="900">
+  <img src="docs/images/service1.png" width="220"/>
+  <img src="docs/images/service2.png" width="220"/>
+  <img src="docs/images/service3.png" width="220"/>
 </p>
 
 ---

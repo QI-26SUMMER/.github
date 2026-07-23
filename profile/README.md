@@ -178,7 +178,7 @@ d-avocado/
 ## Team Photo
 
 <p align="center">
-<img src="docs/images/team/team_photo.jpg" width="800">
+<img src="docs/images/team_photo.png" width="800">
 </p>
 
 ## Members

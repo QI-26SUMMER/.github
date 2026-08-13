@@ -154,10 +154,12 @@ d-avocado/
 
 | Document | Description |
 |----------|-------------|
-| PRD.md | Product requirements |
-| API_spec.md | Backend API documentation |
-| DB_spec.md | Database schema |
-| Architecture.md | Overall system architecture |
+| [PRD](https://github.com/QI-26SUMMER/d-avocado/blob/main/docs/PRD.md) | Product requirements |
+| [API Specification](https://github.com/QI-26SUMMER/d-avocado/blob/main/docs/API.md) | Backend API documentation |
+| [Database Specification](https://github.com/QI-26SUMMER/d-avocado/blob/main/docs/Database.md) | Database schema |
+| [System Architecture](https://github.com/QI-26SUMMER/d-avocado/blob/main/docs/Architecture.md) | Overall system architecture |
+| [Deployment](https://github.com/QI-26SUMMER/d-avocado/blob/main/docs/Deployment.md) | Deployment and infrastructure |
+| [AI Documentation](https://github.com/QI-26SUMMER/d-avocado/blob/main/docs/AI.md) | AI model, training, and evaluation |
 
 ---
 

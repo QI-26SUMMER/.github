@@ -181,37 +181,7 @@ d-avocado/
 <img src="../docs/images/team_photo.png" width="800">
 </p>
 
-## Members
-
-<table>
-<tr>
-
-<td align="center">
-<img src="../docs/images/team/member1.jpg" width="140"><br>
-<b>Member 1</b><br>
-</td>
-
-<td align="center">
-<img src="../docs/images/team/member2.jpg" width="140"><br>
-<b>Member 2</b><br>
-</td>
-
-<td align="center">
-<img src="../docs/images/team/member3.jpg" width="140"><br>
-<b>Member 3</b><br>
-</td>
-
-<td align="center">
-<img src="../docs/images/team/member4.jpg" width="140"><br>
-<b>Member 4</b><br>
-
-<td align="center">
-<img src="../docs/images/team/member4.jpg" width="140"><br>
-<b>Member 5</b><br>
-</td>
-
-</tr>
-</table>
+---
 
 ## Responsibilities
 

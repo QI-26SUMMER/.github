@@ -152,9 +152,11 @@ d-avocado/
 │
 ├── docs/
 │   ├── PRD.md
-│   ├── API_spec.md
-│   ├── DB_spec.md
+│   ├── API.md
+│   ├── Database.md
 │   ├── Architecture.md
+│   ├── Deployment.md
+│   ├── AI.md
 │   └── images/
 │
 ├── davocado-frontend/

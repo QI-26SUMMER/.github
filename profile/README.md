@@ -8,6 +8,14 @@ D-avocado classifies avocado ripeness (Stages 1–5) from a single photo using a
 
 ---
 
+# 📋 Executive Summary
+
+**Subtitle:** Avocado Ripeness Detection & Prediction
+
+D-Avocado is an AI service platform that helps consumers determine the ripeness of avocados and predict when they will reach their preferred stage of ripeness. One of the biggest challenges for avocado buyers is knowing whether an avocado is ready to eat or how many days remain until it reaches the desired condition. By simply taking and uploading a photo, users receive an estimate of the current ripeness level along with a prediction of when the avocado will be ready to enjoy. The platform can be used both before purchasing at the store and after bringing the avocado home. This allows consumers to make better purchasing decisions and enjoy avocados at their optimal freshness.
+
+---
+
 # 📱 Service Introduction
 
 D-avocado is an AI-powered mobile application that helps users determine the optimal time to eat an avocado.

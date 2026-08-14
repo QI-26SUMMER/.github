@@ -24,6 +24,20 @@ To improve the overall user experience, the application stores scan history, sup
 
 ---
 
+# 🎥 Live Demo
+
+<p align="center">
+  <a href="https://youtu.be/Uzf3WhIbDaI">
+    <img src="https://img.youtube.com/vi/Uzf3WhIbDaI/maxresdefault.jpg" width="800">
+  </a>
+</p>
+
+<p align="center">
+  <b>▶️ Watch the D-avocado Demo</b>
+</p>
+
+---
+
 # ✨ Features
 
 - 📷 **Ripeness Classification**

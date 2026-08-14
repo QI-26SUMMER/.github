@@ -79,37 +79,9 @@ To improve the overall user experience, the application stores scan history, sup
 <img src="../docs/images/architecture.png" width="900">
 </p>
 
-```
-                 ┌───────────────┐
-                 │   iOS App     │
-                 └───────┬───────┘
-                         │ HTTPS
-                 ┌───────▼────────────┐
-                 │ Spring Boot API    │
-                 │ (Cloud Run)        │
-                 │  - Authentication  │
-                 │  - Scan Management │
-                 │  - Notifications   │
-                 └───┬───────────┬────┘
-                     │           │
-        ┌────────────▼──┐   ┌────▼─────────────┐
-        │ Cloud SQL      │   │ Cloud Storage    │
-        │ PostgreSQL     │   │ Images           │
-        └────────────────┘   └──────────────────┘
-                     │
-              ┌──────▼────────────────┐
-              │ FastAPI AI Service    │
-              │ (Cloud Run)           │
-              │ - Image Preprocessing │
-              │ - ResNet-18           │
-              │ - AutoML              │
-              │ - D-day Prediction    │
-              └───────────────────────┘
-```
+The backend manages authentication, user information, scan history, user preferences, notifications, and cloud storage.
 
-The backend manages authentication, user information, scan history, and cloud storage.
-
-The AI inference service is fully independent and performs image preprocessing, ripeness prediction, and D-day estimation.
+The AI inference service is independently deployed on Cloud Run and performs image preprocessing, ripeness prediction using Vertex AI AutoML, and D-day estimation.
 
 ---
 

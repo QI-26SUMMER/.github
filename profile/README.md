@@ -185,13 +185,13 @@ d-avocado/
 
 ## Responsibilities
 
-| Member | Major |
-|---------|------------------|
-| Taeyeon Hwang | Kyonggi University Computer Science |
-| Yujin Nam | Keimyung University Computer Science |
-| HyeongJun Kim | Chosun University Information and Communication Engineering |
-| Seungchae Lee | Kumoh National Institute Of Tech |
-| Seon Ung | Keimyung University Automotive Engineering |
+| Member | Major | Role & Responsibilities |
+|---------|------------------|-------------------------|
+| **Taeyeon Hwang** | Kyonggi University Computer Science | **Tech Lead** · Backend development · Ripeness classification model development · GCP infrastructure and server deployment |
+| **Yujin Nam** | Keimyung University Computer Science | **Frontend Developer** · iOS app development · Data collection and dataset preparation |
+| **HyeongJun Kim** | Chosun University Information and Communication Engineering | **ML Engineer** · Data analysis · Ripeness classification model development |
+| **Seungchae Lee** | Kumoh National Institute Of Tech | **Data & ML Engineer** · Data analysis · Model evaluation and performance analysis |
+| **Seon Ung** | Keimyung University Automotive Engineering | **Prediction Model Developer** · D-day prediction model · Temperature-dependent mathematical modeling |
 
 ---
 

@@ -145,7 +145,6 @@ Return Result
 ### Dataset
 
 - **Hass Avocado Ripening Photographic Dataset** (~14,700 images) — Mendeley Data. DOI: [10.17632/3xd9n945v8.1](https://doi.org/10.17632/3xd9n945v8.1) (License: CC BY 4.0)
-  - Images used per model: ResNet-18 13,192 (curated subset of 392 samples with a complete stage 1→5 trajectory) · AutoML Raw 14,570 · AutoML Balanced 20,000 (balanced to 4,000 per class through data augmentation)
 
 ### AI Models & Tools
 
@@ -153,7 +152,7 @@ Return Result
 - **AlexNet** (ImageNet-pretrained, torchvision; comparison model) — Krizhevsky, A., Sutskever, I., Hinton, G.E. "ImageNet Classification with Deep Convolutional Neural Networks." NeurIPS 2012.
 - **InSPyReNet** (background removal) — Kim, T. et al. "Revisiting Image Pyramid Structure for High Resolution Salient Object Detection." ACCV 2022. [arXiv:2209.09475](https://arxiv.org/abs/2209.09475) · [transparent-background](https://github.com/plemeri/transparent-background)
 - **U²-Net / rembg** (background removal, fallback) — Qin, X. et al. "U²-Net: Going Deeper with Nested U-Structure for Salient Object Detection." Pattern Recognition 2020. [arXiv:2005.09007](https://arxiv.org/abs/2005.09007) · [rembg](https://github.com/danielgatis/rembg)
-- **Google Vertex AI AutoML Vision** (production classifier; AutoML Vision Balanced model) — [cloud.google.com/vertex-ai](https://cloud.google.com/vertex-ai)
+- **Google Vertex AI AutoML Vision** — [cloud.google.com/vertex-ai](https://cloud.google.com/vertex-ai)
 
 ### Papers
 

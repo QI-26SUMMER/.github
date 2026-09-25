@@ -4,7 +4,7 @@
 
 Snap a photo of an avocado, find out its ripening stage, and know exactly how many days are left until it's ready to eat.
 
-D-avocado classifies avocado ripeness (Stages 1–5) from a single photo using a deep learning model (ResNet-18), then predicts the remaining days until your preferred eating stage (D-day), adjusted for storage temperature.
+D-avocado classifies avocado ripeness (Stages 1–5) from a single photo using an image classification model (Google Vertex AI AutoML Vision in production, alongside an in-house ResNet-18 model), then predicts the remaining days until your preferred eating stage (D-day), adjusted for storage temperature.
 
 ---
 
@@ -25,9 +25,9 @@ Instead of relying on subjective judgment, users simply take a photo of an avoca
 To improve the overall user experience, the application stores scan history, supports personalized ripeness preferences, and provides notifications before the avocado reaches its optimal eating stage.
 
 <p align="center">
-  <img src="../docs/images/service1.png" width="220"/>
-  <img src="../docs/images/service2.png" width="220"/>
-  <img src="../docs/images/service3.png" width="220"/>
+  <img src="https://raw.githubusercontent.com/QI-26SUMMER/.github/main/docs/images/service1.png" width="220"/>
+  <img src="https://raw.githubusercontent.com/QI-26SUMMER/.github/main/docs/images/service2.png" width="220"/>
+  <img src="https://raw.githubusercontent.com/QI-26SUMMER/.github/main/docs/images/service3.png" width="220"/>
 </p>
 
 ---
@@ -49,7 +49,7 @@ To improve the overall user experience, the application stores scan history, sup
 # ✨ Features
 
 - 📷 **Ripeness Classification**
-  - Upload a photo and receive a five-stage ripeness prediction with confidence scores.
+  - Upload a photo and receive a five-stage ripeness prediction.
 
 - 📅 **D-day Prediction**
   - Estimate the remaining days until the avocado reaches your preferred ripeness stage.
@@ -72,19 +72,19 @@ To improve the overall user experience, the application stores scan history, sup
 
 | Layer | Stack |
 | --- | --- |
-| Mobile (iOS) | Swift / Xcode |
+| Mobile (iOS) | Swift, SwiftUI (iOS 18+) |
 | Backend API | Spring Boot 3.4.2, Java 21 |
-| ML Inference | FastAPI, PyTorch (ResNet-18) |
+| ML Inference | FastAPI on Cloud Run · Vertex AI AutoML Vision (production classifier) · PyTorch ResNet-18 (in-house model) · InSPyReNet (background removal) |
 | Database | PostgreSQL (Cloud SQL) |
 | Image Storage | Google Cloud Storage |
-| Infrastructure | Cloud Run, Artifact Registry, Vertex AI Custom Job |
+| Infrastructure | Cloud Run, Artifact Registry, Vertex AI (AutoML endpoint, Custom Job training) |
 
 ---
 
 # 🏗 Architecture
 
 <p align="center">
-<img src="../docs/images/architecture.png" width="900">
+<img src="https://raw.githubusercontent.com/QI-26SUMMER/.github/main/docs/images/architecture.png" width="900">
 </p>
 
 The backend manages authentication, user information, scan history, user preferences, notifications, and cloud storage.
@@ -96,28 +96,19 @@ The AI inference service is independently deployed on Cloud Run and performs ima
 # 🚀 End-to-End Workflow
 
 ```
-Take Photo
+Take Photo (iOS)
       │
       ▼
-Upload Image
+Upload Image → Spring Boot API
       │
       ▼
-Spring Boot API
+AI Inference Service (FastAPI, Cloud Run)
+  ├─ Background removal & crop (InSPyReNet)
+  ├─ Ripeness classification (Vertex AI AutoML)
+  └─ Temperature-adjusted D-day calculation
       │
       ▼
-Image Preprocessing
-      │
-      ▼
-AI Inference
-      │
-      ▼
-Ripeness Prediction
-      │
-      ▼
-D-day Calculation
-      │
-      ▼
-Save History
+Spring Boot: save scan · upload images to GCS · schedule notification
       │
       ▼
 Return Result
@@ -125,24 +116,14 @@ Return Result
 
 ---
 
-# 📂 Repository Structure
+# 📂 Repositories
 
-```
-d-avocado/
-│
-├── docs/
-│   ├── PRD.md
-│   ├── API.md
-│   ├── Database.md
-│   ├── Architecture.md
-│   ├── Deployment.md
-│   ├── AI.md
-│   └── images/
-│
-├── davocado-frontend/
-├── davocado-backend/
-└── d-avocado-ripeness-mlops/
-```
+| Repository | Description |
+|------------|-------------|
+| [d-avocado](https://github.com/QI-26SUMMER/d-avocado) | Project documentation (PRD, API, database, architecture, deployment, AI) |
+| [davocado-frontend](https://github.com/QI-26SUMMER/davocado-frontend) | iOS app (Swift, SwiftUI) |
+| [davocado-backend](https://github.com/QI-26SUMMER/davocado-backend) | Backend API (Spring Boot) |
+| [d-avocado-ripeness-mlops](https://github.com/QI-26SUMMER/d-avocado-ripeness-mlops) | Model training, evaluation, and AI inference service (FastAPI) |
 
 ---
 
@@ -159,7 +140,7 @@ d-avocado/
 
 ---
 
-# 📖 Dataset & References
+# 📖 Dataset, Models & References
 
 ### Dataset
 
@@ -190,7 +171,7 @@ d-avocado/
 ## Team Photo
 
 <p align="center">
-<img src="../docs/images/team_photo.png" width="800">
+<img src="https://raw.githubusercontent.com/QI-26SUMMER/.github/main/docs/images/team_photo.png" width="800">
 </p>
 
 ---

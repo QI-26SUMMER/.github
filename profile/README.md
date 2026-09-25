@@ -163,13 +163,25 @@ d-avocado/
 
 ### Dataset
 
-- Hass Avocado Ripening Photographic Dataset (~14,700 images)
+- **Hass Avocado Ripening Photographic Dataset** (~14,700 images) — Mendeley Data. DOI: [10.17632/3xd9n945v8.1](https://doi.org/10.17632/3xd9n945v8.1) (License: CC BY 4.0)
 
-### References
+### AI Models & Tools
 
-- Xavier et al. (2024), *Foods*
-- Perez et al. (2004)
-- Arpaia et al. (2018)
+- **ResNet-18** (ImageNet-pretrained, torchvision) — He, K., Zhang, X., Ren, S., Sun, J. "Deep Residual Learning for Image Recognition." CVPR 2016. [arXiv:1512.03385](https://arxiv.org/abs/1512.03385)
+- **AlexNet** (ImageNet-pretrained, torchvision; comparison model) — Krizhevsky, A., Sutskever, I., Hinton, G.E. "ImageNet Classification with Deep Convolutional Neural Networks." NeurIPS 2012.
+- **InSPyReNet** (background removal) — Kim, T. et al. "Revisiting Image Pyramid Structure for High Resolution Salient Object Detection." ACCV 2022. [arXiv:2209.09475](https://arxiv.org/abs/2209.09475) · [transparent-background](https://github.com/plemeri/transparent-background)
+- **U²-Net / rembg** (background removal, fallback) — Qin, X. et al. "U²-Net: Going Deeper with Nested U-Structure for Salient Object Detection." Pattern Recognition 2020. [arXiv:2005.09007](https://arxiv.org/abs/2005.09007) · [rembg](https://github.com/danielgatis/rembg)
+- **Google Vertex AI AutoML Vision** — [cloud.google.com/vertex-ai](https://cloud.google.com/vertex-ai)
+
+### Papers
+
+- Xavier, P., Rodrigues, P.M., Silva, C.L.M. (2024). "Shelf-Life Management and Ripening Assessment of 'Hass' Avocado (*Persea americana*) Using Deep Learning Approaches." *Foods*, 13(8), 1150. [doi.org/10.3390/foods13081150](https://doi.org/10.3390/foods13081150) — dataset, ripening coefficients (α); our temperature Q10 is derived from re-fitting this dataset
+- Arpaia, M.L., Collin, S., Sievert, J., Obenland, D. (2018). "'Hass' avocado quality as influenced by temperature and ethylene prior to and during final ripening." *Postharvest Biology and Technology*, 140, 76–84. [doi.org/10.1016/j.postharvbio.2018.02.015](https://doi.org/10.1016/j.postharvbio.2018.02.015) — ripening-rate plateau above 20 °C
+
+---
+
+# 🙏 Acknowledgment
+
 
 ---
 

@@ -154,14 +154,23 @@ Return Result
 - **U²-Net / rembg** (background removal, fallback) — Qin, X. et al. "U²-Net: Going Deeper with Nested U-Structure for Salient Object Detection." Pattern Recognition 2020. [arXiv:2005.09007](https://arxiv.org/abs/2005.09007) · [rembg](https://github.com/danielgatis/rembg)
 - **Google Vertex AI AutoML Vision** — [cloud.google.com/vertex-ai](https://cloud.google.com/vertex-ai)
 
-### Papers
+### References
 
 - Xavier, P., Rodrigues, P.M., Silva, C.L.M. (2024). "Shelf-Life Management and Ripening Assessment of 'Hass' Avocado (*Persea americana*) Using Deep Learning Approaches." *Foods*, 13(8), 1150. [doi.org/10.3390/foods13081150](https://doi.org/10.3390/foods13081150) — dataset, ripening coefficients (α); our temperature Q10 is derived from re-fitting this dataset
 - Arpaia, M.L., Collin, S., Sievert, J., Obenland, D. (2018). "'Hass' avocado quality as influenced by temperature and ethylene prior to and during final ripening." *Postharvest Biology and Technology*, 140, 76–84. [doi.org/10.1016/j.postharvbio.2018.02.015](https://doi.org/10.1016/j.postharvbio.2018.02.015) — ripening-rate plateau above 20 °C
 
 ---
 
-# 🙏 Acknowledgment
+## 🙏 Acknowledgments
+
+This AI Service Platform was developed as part of the [17th QI AI Entrepreneurship Program – Summer 2026 (full content)](https://www.kaggle.com/code/QualcommInstituteAI/17th-qi-ai-entrepreneurship-program-summer-2026) & [(summary record)](https://github.com/Qualcomm-Institute-AI/QI-AI-Programs/tree/main/2026/Summer/17th%20QI%20AI%20Entrepreneurship%20Program), hosted by the Qualcomm Institute (QI), University of California, San Diego (UC San Diego).
+
+We would like to express our sincere gratitude to [Dr. Seokheon Cho](https://www.linkedin.com/in/justin-seokheon-cho-ph-d-91253343a/) of the Qualcomm Institute for his extensive guidance, supervision, and support throughout the development of this platform.
+
+We also acknowledge the following sources of research support:
+
+This research was supported by the MSIT (Ministry of Science and ICT), Korea, under the National Program for Excellence in SW (2021-0-01393), supervised by the IITP (Institute of Information & Communications Technology Planning & Evaluation).
+
 
 
 ---

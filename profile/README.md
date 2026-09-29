@@ -162,8 +162,8 @@ This project uses the following datasets and external data sources:
 
 This project uses the following AI models for training, validation and test:
 
-* **Google Vertex AI AutoML Vision** — Selected as the production ripeness classifier on our platform. [TODO: 선정 이유/성능]
-* **ResNet-18** — ImageNet-pretrained (torchvision) in-house ripeness classification model. [TODO: 배포 여부/성능] [He et al. (2016)]
+* **Google Vertex AI AutoML Vision** — Selected as the production ripeness classifier on our platform.
+* **ResNet-18** — ImageNet-pretrained (torchvision) in-house ripeness classification model. [He et al. (2016)]
 * **AlexNet** — ImageNet-pretrained (torchvision); used as a comparison model and not selected for final deployment. [Krizhevsky et al. (2012)]
 * **InSPyReNet** — Used for background removal and cropping in image preprocessing, via [transparent-background](https://github.com/plemeri/transparent-background). [Kim et al. (2022)]
 * **U²-Net** — Used as a fallback for background removal, via [rembg](https://github.com/danielgatis/rembg). [Qin et al. (2020)]

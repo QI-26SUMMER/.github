@@ -140,27 +140,6 @@ Return Result
 
 ---
 
-# 📖 Dataset, Models & References
-
-### Dataset
-
-- **Hass Avocado Ripening Photographic Dataset** (~14,700 images) — Mendeley Data. DOI: [10.17632/3xd9n945v8.1](https://doi.org/10.17632/3xd9n945v8.1) (License: CC BY 4.0)
-
-### AI Models & Tools
-
-- **ResNet-18** (ImageNet-pretrained, torchvision) — He, K., Zhang, X., Ren, S., Sun, J. "Deep Residual Learning for Image Recognition." CVPR 2016. [arXiv:1512.03385](https://arxiv.org/abs/1512.03385)
-- **AlexNet** (ImageNet-pretrained, torchvision; comparison model) — Krizhevsky, A., Sutskever, I., Hinton, G.E. "ImageNet Classification with Deep Convolutional Neural Networks." NeurIPS 2012.
-- **InSPyReNet** (background removal) — Kim, T. et al. "Revisiting Image Pyramid Structure for High Resolution Salient Object Detection." ACCV 2022. [arXiv:2209.09475](https://arxiv.org/abs/2209.09475) · [transparent-background](https://github.com/plemeri/transparent-background)
-- **U²-Net / rembg** (background removal, fallback) — Qin, X. et al. "U²-Net: Going Deeper with Nested U-Structure for Salient Object Detection." Pattern Recognition 2020. [arXiv:2005.09007](https://arxiv.org/abs/2005.09007) · [rembg](https://github.com/danielgatis/rembg)
-- **Google Vertex AI AutoML Vision** — [cloud.google.com/vertex-ai](https://cloud.google.com/vertex-ai)
-
-### References
-
-- Xavier, P., Rodrigues, P.M., Silva, C.L.M. (2024). "Shelf-Life Management and Ripening Assessment of 'Hass' Avocado (*Persea americana*) Using Deep Learning Approaches." *Foods*, 13(8), 1150. [doi.org/10.3390/foods13081150](https://doi.org/10.3390/foods13081150) — dataset, ripening coefficients (α); our temperature Q10 is derived from re-fitting this dataset
-- Arpaia, M.L., Collin, S., Sievert, J., Obenland, D. (2018). "'Hass' avocado quality as influenced by temperature and ethylene prior to and during final ripening." *Postharvest Biology and Technology*, 140, 76–84. [doi.org/10.1016/j.postharvbio.2018.02.015](https://doi.org/10.1016/j.postharvbio.2018.02.015) — ripening-rate plateau above 20 °C
-
----
-
 ## 🙏 Acknowledgments
 
 This AI Service Platform was developed as part of the [17th QI AI Entrepreneurship Program – Summer 2026 (full content)](https://www.kaggle.com/code/QualcommInstituteAI/17th-qi-ai-entrepreneurship-program-summer-2026) & [(summary record)](https://github.com/Qualcomm-Institute-AI/QI-AI-Programs/tree/main/2026/Summer/17th%20QI%20AI%20Entrepreneurship%20Program), hosted by the Qualcomm Institute (QI), University of California, San Diego (UC San Diego).
@@ -171,7 +150,37 @@ We also acknowledge the following sources of research support:
 
 This research was supported by the MSIT (Ministry of Science and ICT), Korea, under the National Program for Excellence in SW (2021-0-01393), supervised by the IITP (Institute of Information & Communications Technology Planning & Evaluation).
 
+## 📖 Dataset, AI Model & References
 
+### Dataset
+
+This project uses the following datasets and external data sources:
+
+* **[Hass Avocado Ripening Photographic Dataset](https://doi.org/10.17632/3xd9n945v8.1)** — A photographic dataset of approximately 14,700 images of 'Hass' avocados across ripening stages, published on Mendeley Data (License: CC BY 4.0). Also used to derive ripening coefficients (α) and, through re-fitting, the temperature Q10 for D-day prediction. [Xavier et al. (2024)]
+
+### AI Model
+
+This project uses the following AI models for training, validation and test:
+
+* **Google Vertex AI AutoML Vision** — Selected as the production ripeness classifier on our platform. [TODO: 선정 이유/성능]
+* **ResNet-18** — ImageNet-pretrained (torchvision) in-house ripeness classification model. [TODO: 배포 여부/성능] [He et al. (2016)]
+* **AlexNet** — ImageNet-pretrained (torchvision); used as a comparison model and not selected for final deployment. [Krizhevsky et al. (2012)]
+* **InSPyReNet** — Used for background removal and cropping in image preprocessing, via [transparent-background](https://github.com/plemeri/transparent-background). [Kim et al. (2022)]
+* **U²-Net** — Used as a fallback for background removal, via [rembg](https://github.com/danielgatis/rembg). [Qin et al. (2020)]
+
+### References
+
+1. Xavier, P., Rodrigues, P. M., and Silva, C. L. M., "Shelf-Life Management and Ripening Assessment of 'Hass' Avocado (Persea americana) Using Deep Learning Approaches," Foods, vol. 13, no. 8, 1150, 2024. [[DOI](https://doi.org/10.3390/foods13081150)]
+
+2. Arpaia, M. L., Collin, S., Sievert, J., and Obenland, D., "'Hass' avocado quality as influenced by temperature and ethylene prior to and during final ripening," Postharvest Biology and Technology, vol. 140, pp. 76–84, 2018. [[DOI](https://doi.org/10.1016/j.postharvbio.2018.02.015)]
+
+3. He, K., Zhang, X., Ren, S., and Sun, J., "Deep Residual Learning for Image Recognition," in Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016. [[arXiv](https://arxiv.org/abs/1512.03385)]
+
+4. Krizhevsky, A., Sutskever, I., and Hinton, G. E., "ImageNet Classification with Deep Convolutional Neural Networks," in Advances in Neural Information Processing Systems (NeurIPS), 2012.
+
+5. Kim, T. et al., "Revisiting Image Pyramid Structure for High Resolution Salient Object Detection," in Proceedings of the Asian Conference on Computer Vision (ACCV), 2022. [[arXiv](https://arxiv.org/abs/2209.09475)]
+
+6. Qin, X. et al., "U²-Net: Going Deeper with Nested U-Structure for Salient Object Detection," Pattern Recognition, 2020. [[arXiv](https://arxiv.org/abs/2005.09007)]
 
 ---
 

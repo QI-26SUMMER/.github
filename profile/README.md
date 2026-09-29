@@ -176,7 +176,7 @@ This project uses the following AI models for training, validation and test:
 
 3. He, K., Zhang, X., Ren, S., and Sun, J., "Deep Residual Learning for Image Recognition," in Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016. [[arXiv](https://arxiv.org/abs/1512.03385)]
 
-4. Krizhevsky, A., Sutskever, I., and Hinton, G. E., "ImageNet Classification with Deep Convolutional Neural Networks," in Advances in Neural Information Processing Systems (NeurIPS), 2012.
+4. Krizhevsky, A., Sutskever, I., and Hinton, G. E., "ImageNet Classification with Deep Convolutional Neural Networks," in Advances in Neural Information Processing Systems (NeurIPS), vol. 25, pp. 1097–1105, 2012. [[Paper](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html)]
 
 5. Kim, T. et al., "Revisiting Image Pyramid Structure for High Resolution Salient Object Detection," in Proceedings of the Asian Conference on Computer Vision (ACCV), 2022. [[arXiv](https://arxiv.org/abs/2209.09475)]
 
